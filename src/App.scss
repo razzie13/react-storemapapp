@@ -9,9 +9,10 @@ body  {
 
 .App  {
     width: 100%;
-    max-width: 1900px;
+    max-width: 1350px;
     display: flex;
     flex-direction: row;
+    margin: auto;
 }
 
 .left-side  {
@@ -55,13 +56,21 @@ body  {
 }
 
 .store-map  {
-    width: 100%;
-    height: calc(100% - 200px)
+    background: #f8f8f8;
+    border-style: solid;
+    border-width: 4px;
+    border-color: #231F20;
+    border-radius: 15px;
+    width: 1000px;
+    height: 400px;
+    position: relative;
+    margin: 1rem 0;
+    display: block;
 }
 
 .shopping-list  {
     width: 90%;
-    height: 1000px;
+    height: 640px;
     border-style: solid;
     border-color: black;
     border-radius: 15px;
@@ -72,14 +81,62 @@ body  {
     padding-left: 14px;
     box-sizing: border-box;
 
+    input  {
+        width: 90%;
+        margin: auto;
+        box-sizing: border-box;
+        border-style: solid;
+        border-radius: 5px 5px 0 0;
+        font-size: 1rem;
+        padding: 0.5rem;
+        text-align: center;
+    }
+
     button  {
         width: 90%;
         border-style: none;
-        border-radius: 5px;
+        border-radius: 0 0 5px 5px;
         background-color: blue;
         color: white;
         font-size: 1.2rem;
-        
+        margin-bottom: 1rem;
+    }
+
+    .shopping-list-item  {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-height: 2rem;
+        width: 90%;
+        padding: 4px;
+        box-sizing: border-box;
+
+        h5  {
+            margin-top: 0;
+        }
+    }
+
+    .shopping-list-item:nth-child(odd)  {
+        background-color: lightgray;
+    }
+
+    .find-button  {
+        font-size: 0.8rem;
+        border-style: none;
+        border-radius: 10px;
+        width: 3rem;
+        font-weight: bold;
+    }
+
+    .close-button  {
+        font-size: 0.8rem;
+        border-style: none;
+        border-radius: 10px;
+        width: 1.5rem;
+        font-weight: bold;
+        margin-left: 0.5rem;
+        background-color: orange;
+        color: black;
     }
 }
 

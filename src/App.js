@@ -5,6 +5,9 @@ import './App.css';
 // FOOD ITEM LOCATIONS FROM CSS
 import './FoodItems.css';
 
+// STORE LAYOUT FROM CSS
+import './StoreLayout.css'
+
 import StoreName from "./StoreName/StoreName";
 import StoreDetails from './StoreDetails/StoreDetails'
 import StoreMap from "./StoreMap/StoreMap";
@@ -24,45 +27,66 @@ export default class App extends Component {
     this.state = {
        storeName: 'Westmount & Ottawa FreshCo',
        storeHours: '7am-10pm daily',
-       shoppingListItems: [],
-       showItemLocator: true
+       shoppingListItems: [
+         {
+           text: 'bananas',
+           key: 'bananas'
+         },
+         {
+          text: 'apples',
+          key: 'apples'
+        },
+        {
+          text: 'pears',
+          key: 'pears'
+        },
+        {
+          text: 'bread',
+          key: 'bread'
+        },
+        {
+          text: 'ice cream',
+          key: 'ice cream'
+        }
+        ],
+       showItemLocator: false,
+       searchedItem: null
     }
   }
 
-  showItemLocator = () => {
+  showItemLocator = groceryItem => {
     this.setState({
-      showItemLocator: true
-    })
+      showItemLocator: true,
+      searchedItem: groceryItem
+    });
+    console.log('function showItemLocator')
+    console.log(groceryItem)
   }
 
   hideItemLocator = () => {
     this.setState({
-      showItemLocator: false
-    })
+      showItemLocator: false,
+      searchedItem: null
+    });
+    console.log('function hideItemLocator')
   }
   
-  addGroceryItem = e => {
+  
+  addGroceryItem = groceryItem => {
     console.log('function addGroceryItem')
-   
-
-
-    if (this.textInput.value !== '')  {
-      let newGroceryItem = {
-        text: this.textInput.value,
-        key: Date.now()
-      };
-
-      
-
-      this.setState({
-        shoppingListItems: [...this.state.shoppingListItems, newGroceryItem]
-      });
-    }   
-
-    this.textInput.value = "";
-    e.preventDefault();
     
-    console.log(this.state.shoppingListItems)
+    if (groceryItem.current.value !== '')  {
+       let newGroceryItem = {
+         text: groceryItem.current.value,
+         key: groceryItem.current.value  
+       };
+
+       this.setState({
+         shoppingListItems: [...this.state.shoppingListItems, newGroceryItem]
+       });
+
+      console.log(this.state.shoppingListItems)
+    }   
   }
   
 
@@ -73,13 +97,13 @@ export default class App extends Component {
           <StoreName locationName={this.state.storeName} />
           <StoreMap />
           <StoreDetails locationHours={this.state.storeHours}/>
+          <ItemLocator display={this.state.showItemLocator} searchedItem={this.state.searchedItem} hideLocator={this.hideItemLocator}/>
         </div>
         <div className="right-side">
           <ShoppingList shoppingListItems={this.state.shoppingListItems} storeName={this.state.storeName} showLocator={this.showItemLocator} addGroceryItem={this.addGroceryItem}/>
         </div>
         
         
-        <ItemLocator display={this.state.showItemLocator} hideLocator={this.hideItemLocator}/>
       </div>
     )
   }
