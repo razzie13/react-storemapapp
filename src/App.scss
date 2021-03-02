@@ -1,0 +1,132 @@
+$PRIMARY_COMPANY_COLOUR: yellowgreen;
+$SECONDARY_COMPANY_COLOUR: yellow;
+
+body  {
+    margin: 0;
+    padding: 0;
+    background-color: $PRIMARY_COMPANY_COLOUR;
+}
+
+.App  {
+    width: 100%;
+    max-width: 1900px;
+    display: flex;
+    flex-direction: row;
+}
+
+.left-side  {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.right-side  {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.store-name, .store-details  {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    color: black;
+
+    h1, h4  {
+        margin-left: 2rem;
+    }
+
+    .store-detailed-info  {
+        display: flex;
+        flex-direction: row;
+        margin-top: -30px;
+
+        li  {
+            list-style-type: none;
+
+            svg  {
+                margin-right: 1rem;
+            }
+        }
+    }
+}
+
+.store-map  {
+    width: 100%;
+    height: calc(100% - 200px)
+}
+
+.shopping-list  {
+    width: 90%;
+    height: 1000px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 15px;
+    background-color: white;
+    color: black;
+    text-align: left;
+    margin: auto;
+    padding-left: 14px;
+    box-sizing: border-box;
+
+    button  {
+        width: 90%;
+        border-style: none;
+        border-radius: 5px;
+        background-color: blue;
+        color: white;
+        font-size: 1.2rem;
+        
+    }
+}
+
+.item-locator  {
+    width: 150px;
+    height: 220px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: black;
+    border-radius: 15px;
+    background-color: $SECONDARY_COMPANY_COLOUR;
+    color: black;
+    text-align: center;
+    z-index: 10;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    .close-button  {
+        border-style: none;
+        background-color: transparent;
+        font-weight: bold;
+        padding: 10px 10px 0 0;
+        position: absolute;
+        right: 2px;
+    }
+
+    .got-it-button  {
+        background-color: white;
+        border-style: solid;
+        border-color: black;
+        border-width: 2px;
+        box-sizing: border-box;
+        border-radius: 2px;
+        width: 85%;
+        margin: auto;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+    }
+
+    svg  {
+        color: rgb(206, 3, 3);
+        font-size: 60px;
+        margin: auto;
+    }
+}
+
+.hide  {
+    display: none;
+}

@@ -1,0 +1,544 @@
+/* ----- aisles are numbered from right to left ----- */
+/* ----- aisle side "a" is on left side of shelves as viewed from above, aisle side "b" is on the right side ----- */
+
+/* ----- "storecontainer" where all the items in the map are is 1000px wide and 400px tall ----- */
+/* ----- lowest number of pixels used within "storecontainer" for popup div is 300px ----- */
+/* ----- product names listed alphabetically underneath categories, seperated by space between lines ----- */
+
+/* ----- aisle 1b ----- margin-left: 65.25%; ----- */
+.bulk,
+
+.almonds,
+.dates,
+.dried-apricots,
+.figs,
+.peanuts,
+.pistachios,
+.punjabi-mix,
+.sunflower-seeds,
+.trail-mix  {
+    top: 25%;
+    margin-left: 67%;
+}
+.deli,
+
+.bree,
+.boursin,
+.camembert,
+.deli-cheese,
+.deli-meats,
+.genoa,
+.gorgonzola,
+.gouda,
+.havarti,
+.mozzarella,
+.mozzarella-balls,
+.proscuttio,
+.provolone,
+.provolone-cheese {
+    top: 55%;
+    margin-left: 67%;
+}
+
+/* ----- aisle 1a ----- margin-left: 64%; ----- */
+.cottage-cheese,
+.sour-cream  {
+    top: 25%;
+    margin-left: 64%;
+}
+
+.best-buy-cheese,
+.cream-cheese,
+.cheesestrings,
+.cheese-bars,
+.cheese,
+.marble-cheese,
+.medium-cheese,
+.mild-cheese,
+.mozzarella-cheese,
+.mozza-cheese,
+.old-cheese,
+.shredded-cheese  {
+    top: 30%;
+    margin-left: 64%;
+}
+
+.yogourt,
+.yogurt,
+.yogourt-tubes  {
+    top: 50%;
+    margin-left: 64%;
+}
+
+.chilled-juice,
+.five-alive,
+.fruitopia,
+.juice,
+.nestea,
+.orange-juice,
+.watermelon-juice,
+.chilled-apple-juice,
+.iced-tea,
+.ice-tea,
+.peace-tea  {
+    top: 65%;
+    margin-left: 64%;
+}
+
+
+/* ----- aisle 2b ----- margin-left: 53.25%; -----*/
+.almond-butter,
+.jam,
+.strawberry-jam,
+.raspberry-jam,
+.blueberry-jam,
+.apricot-jam,
+.blackberry-jam
+.kraft-peanut-butter,
+.planters-peanut-butter,
+.peanut-butter,
+.kraft-hazelnut-spread,
+.nutella  {
+    top: 25%;
+    margin-left: 55%;
+}
+
+.hot-cereal,
+.oatmeal  {
+    top: 30%;
+    margin-left: 55%;
+}
+
+.cereal,
+
+.all-bran,
+.all-bran-buds,
+.capn-crunch,
+.captain-crunch,
+.cheerios,
+.chex,
+.cinnamon-toast-crunch,
+.cocoa-puffs,
+.frosted-flakes,
+.froot-loops,
+.fruit-loops,
+.harvest-crunch,
+.life,
+.lucky-charms,
+.mini-wheats,
+.oreo-o,
+.oreo-os,
+.raisin-bran,
+.reese-puffs,
+.rice-krispies,
+.shredded-wheat,
+.special-k,
+.vector,
+.weetabix  {
+    top: 60%;
+    margin-left: 55%;
+}
+
+/* ----- aisle 2a ----- margin-left: 52%; */
+.coffee,
+.coffee-filters,
+.k-cups,
+.maxwell-house,
+.nescafe,
+.tassimo-disks,
+.t-disks,
+.lipton-tea,
+.red-rose,
+.red-rose-tea,
+.tetlea-tea,
+.tetlea,
+.tea,
+.hot-chocolate,
+.hot-chocolate-mix  {
+    top: 25%;
+    margin-left: 52%;
+}
+.juice  {
+    top: 65%;
+    margin-left: 52%;
+}
+
+/* ----- aisle 3b ----- */
+.arrowroot,
+.cereal-bars,
+.cookies,
+.chips-ahoy,
+.chunks-ahoy,
+.maple-leaf-cookies,
+.maple-creme-cookies,
+.maple-cream-cookies,
+.oreos
+  {
+    top: 60%;
+    margin-left: 48%;
+}
+
+/* ----- aisle 3a ----- */
+.butterscotch-chips,
+.chocolate-chips,
+.chocolate-chunks,
+.cocoa,
+.cocoa-powder,
+.bakers-chocolate,
+.baking-powder,
+.baking-soda,
+.brown-sugar,
+.dried-fruits,
+.dried-prunes,
+.dried-cranberries,
+.icing-sugar,
+.flour,
+.molasses,
+.spices,
+.sugar {
+    top: 30%;
+    margin-left: 46%;
+}
+
+/* ----- aisle 4b ----- */
+.bbq-sauce,
+.barbecue-sauce,
+.diana-sauce,
+.ketchup,
+.liquid-smoke,
+.mayonnaise,
+.mustard,
+.miracle-whip,
+.pickles,
+.relish,
+.salad-dressing,
+.tartar-sauce,
+.worchestershire,
+.worchestershire-sauce  {
+    top: 60%;
+    margin-left: 43%;
+}
+
+
+
+/* ----- aisle 4a ----- */
+.rice  {
+    top: 30%;
+    margin-left: 37%
+}
+
+.crackers,
+
+.premium-plus,
+.ritz,
+.wheat-thins  {
+    top: 45%;
+    margin-left: 37%;
+}
+
+.soup,
+
+
+.beef-broth,
+.broth,
+.campbells,
+.canned-soup,
+.chicken-broth,
+.chicken-soup,
+.chicken-noodle-soup,
+.italian-wedding,
+.vegetable-soup,
+.vegetable-broth,
+.french-onion-soup,
+.chunky-soup  {
+    top: 65%;
+    margin-left: 37%;
+}
+
+
+/* ----- aisle 5b ----- */
+
+
+/* ----- aisle 5a ----- */
+
+
+/* ----- aisle 6b ----- */
+.chips,
+.doritos,
+.lays,
+.potato-chips,
+.pringles,
+.tostitos  {
+    top: 50%;
+    margin-left: 22%;
+}
+
+
+
+/* ----- aisle 6a ----- */
+.bottled-water,
+.evian,
+.mio,
+.zaz,
+.water  {
+    top: 40%;
+    margin-left: 12%;
+}
+
+.bubly,
+.coke,
+.coke-zero,
+.crush,
+.diet-coke,
+.diet-pepsi,
+.dr-pepper,
+.doctor-pepper,
+.orange-crush,
+.pepsi,
+.root-beer,
+.sprite  {
+    top: 60%;
+    margin-left: 12%;
+}
+
+/* ----- aisle 7b ----- */
+.alpo,
+.catfood,
+.cat-chow
+.dogfood,
+.petfood,
+.puppy-chow,
+.cat-food,
+.cat-treats,
+.dog-food,
+.pet-food,
+.friskies,
+.milk-bone,
+.purina,
+.whiskas,
+.whiskas-temptations {
+    top: 25%;
+    margin-left: 9%;
+}
+
+/* ----- aisle 7a ----- */
+.conditioner,
+.dippity-doo,
+.gel,
+.hair-gel,
+.hair-spray,
+.hairspray,
+.shampoo  {
+    top: 60%;
+    margin-left: 6%;
+}
+
+/* ----- aisle 8b ----- */
+.bathroom-tissue,
+.cashmere,
+.toilet-paper  {
+    top: 40%;
+    margin-left: 4%;
+}
+
+.broom,
+.brooms,
+.dustpans,
+.mop,
+.mops,
+.swiffer  {
+    top: 30%;
+    margin-left: 4%;
+}
+
+
+.all-surface-cleaner,
+.cleaner,
+.clr,
+.drano,
+.floor-cleaner,
+.lysol,
+.lysol-wipes,
+.mrclean,
+.mr-clean,
+.multi-surface-cleaner,
+.scrubbing-bubbles,
+.toilet-bowl-cleaner  {
+    top: 40%;
+    margin-left: 4%;
+}
+
+.paper-towel,
+.paper-towels  {
+    top: 25%;
+    margin-left: 4%;
+}
+
+/* ----- aisle 8a ----- */
+
+
+
+
+/* ----- values imported from shopping list project css ----- */
+
+        .aloe-vera,
+        .apple,
+        .apples,
+        .apricots,
+        .asparagus,
+        .avocado,
+        .avocados,
+        .bagged-apples,
+        .banana,
+        .bananas,
+        .beets,
+        .breadfruit,
+        .broccoli,
+        .cabbage,
+        .cantaloupe,
+        .carrots,
+        .cassava,
+        .cauliflower,
+        .celery,
+        .chard,
+        .cilantro,
+        .clementines,
+        .corn,
+        .dasheen,
+        .eddoes,
+        .eggplant,
+        .green-cabbage,
+        .green-grapes,
+        .green-onion,
+        .green-onions,
+        .grapefruit,
+        .grapes,
+        .globe-grapes,
+        .honeydew,
+        .kiwi,
+        .kiwis,
+        .lettuce,
+        .lemons,
+        .limes,
+        .mandarins,
+        .mango,
+        .mangoes,
+        .methi,
+        .mint,
+        .mushrooms,
+        .nectarines,
+        .oranges,
+        .papaya,
+        .parsley,
+        .passionfruit,
+        .peaches,
+        .pear,
+        .pears,
+        .peppers,
+        .pineapple,
+        .pineapples,
+        .plantain,
+        .plantains,
+        .plums,
+        .pomegranate,
+        .pomegranates,
+        .potatoes,
+        .red-cabbage,
+        .red-grapes,
+        .red-mangoes,
+        .rhubarb,
+        .rutabaga,
+        .rutabagas,
+        .savoy-cabbage,
+        .sliced-mushrooms,
+        .squash,
+        .butternut,
+        .butternut-squash,
+        .acorn-squash,
+        .buttercup-squash,
+        .spaghetti-squash,
+        .sweet-potato,
+        .sweet-potatoes,
+        .watermelon,
+        .yam,
+        .yams,
+        .yellow-mangoes,
+        .yucca,
+        .zucchini  {
+            color: rgb(12, 87, 12);
+            /* text color listed as "black !important" when displayed on store map */
+            top: 75%;
+            margin-left: 85%;
+        }
+        .blackberries,
+        .blueberries,
+        .fresh-berries,
+        .gooseberries,
+        .raspberries,
+        .strawberries
+            {
+            color: rgb(12, 87, 12);
+            /* text color listed as "black !important" when displayed on store map */
+            top: 60%;
+            margin-left: 95%;
+        }
+        .bhindi,
+        .chili-peppers,
+        .chinese-bittermelon,
+        .chinese-eggplant,
+        .chinese-okra,
+        .curry-leaf,
+        .drumstick,
+        .gawar,
+        .indian-bittermelon,
+        .indian-eggplant,
+        .jackfruit,
+        .jack-fruit,
+        .karela,
+        .long-bean,
+        .long-beans,
+        .long-squash,
+        .okra,
+        .parvar,
+        .tindora
+        {
+        color: rgb(12, 87, 12);
+        /* text color listed as "black !important" when displayed on store map */
+        top: 90%;
+        margin-left: 98%;
+    }
+
+    .bolthouse-farms,
+    .kombucha,
+    .pom-wonderful,
+    .smoothies
+    {
+    color: rgb(12, 87, 12);
+    /* text color listed as "black !important" when displayed on store map */
+    top: 99%;
+    margin-left: 87%;
+}
+
+
+        .beef,
+        .chicken,
+        .ground,
+        .ground-beef,
+        .ground-chicken,
+        .ground-pork,
+        .lamb,
+        .lamb-chops,
+        .pork,
+        .pork-chops,
+        .roast-beef,
+        .roast-pork,
+        .sausage,
+        .sausages,
+        .steak,
+        .striploin,
+        .turkey  {
+            color: rgb(114, 7, 7);
+            /* text color listed as "black !important" when displayed on store map */
+            top: 10%;
+            margin-left: 85%;
+        }
