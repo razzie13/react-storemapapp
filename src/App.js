@@ -20,6 +20,7 @@ export default class App extends Component {
     super(props)
 
     this.addGroceryItem = this.addGroceryItem.bind(this);
+    this.removeGroceryItem = this.removeGroceryItem.bind(this);
 
     this.showItemLocator = this.showItemLocator.bind(this);
     this.hideItemLocator = this.hideItemLocator.bind(this);
@@ -50,7 +51,9 @@ export default class App extends Component {
         }
         ],
        showItemLocator: false,
-       searchedItem: null
+       searchedItem: null,
+       creditVisa: true,
+       creditMC: true
     }
   }
 
@@ -63,12 +66,13 @@ export default class App extends Component {
     console.log(groceryItem)
   }
 
-  hideItemLocator = () => {
+  hideItemLocator = removedItem => {
     this.setState({
       showItemLocator: false,
       searchedItem: null
     });
     console.log('function hideItemLocator')
+    console.log(removedItem)
   }
   
   
@@ -89,6 +93,11 @@ export default class App extends Component {
     }   
   }
   
+  removeGroceryItem = () => {
+    console.log('function removeGroceryItem')
+    
+  }
+  
 
   render() {
     return (
@@ -96,11 +105,11 @@ export default class App extends Component {
         <div className="left-side">
           <StoreName locationName={this.state.storeName} />
           <StoreMap />
-          <StoreDetails locationHours={this.state.storeHours}/>
+          <StoreDetails locationHours={this.state.storeHours} visa={this.state.creditVisa} mastercard={this.state.creditMC}/>
           <ItemLocator display={this.state.showItemLocator} searchedItem={this.state.searchedItem} hideLocator={this.hideItemLocator}/>
         </div>
         <div className="right-side">
-          <ShoppingList shoppingListItems={this.state.shoppingListItems} storeName={this.state.storeName} showLocator={this.showItemLocator} addGroceryItem={this.addGroceryItem}/>
+          <ShoppingList shoppingListItems={this.state.shoppingListItems} storeName={this.state.storeName} showLocator={this.showItemLocator} addGroceryItem={this.addGroceryItem} removeGroceryItem={this.removeGroceryItem}/>
         </div>
         
         

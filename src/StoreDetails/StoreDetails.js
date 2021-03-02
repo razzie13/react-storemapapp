@@ -15,8 +15,8 @@ export default function StoreDetails(props) {
             <h4>Open from {props.locationHours}</h4>
             <div className="store-detailed-info">
                 <ul>
-                    <li><FontAwesomeIcon icon={faCcVisa} />Visa Accepted</li>
-                    <li><FontAwesomeIcon icon={faCcMastercard} />Mastercard Accepted</li>
+                    { props.visa ? <li><FontAwesomeIcon icon={faCcVisa} />Visa Accepted</li> : null }
+                    { props.mastercard ? <li><FontAwesomeIcon icon={faCcMastercard} />Mastercard Accepted</li> : null }
                 </ul>
                 <ul>
                     <li><FontAwesomeIcon icon={faCarrot} />Fresh Produce</li>

@@ -13,7 +13,7 @@ export default function ItemLocator(props) {
             <button className="close-button" onClick={props.hideLocator}>X</button>
             <h3>{props.searchedItem}</h3>
             <FontAwesomeIcon icon={faArrowAltCircleDown} />
-            <button className="got-it-button" onClick={() => this.props.showLocator(props.searchedItem)} >Remove from List</button>
+            <button className="got-it-button" onClick={() => props.hideLocator(props.searchedItem)} >Remove from List</button>
         </div>
     )
 }

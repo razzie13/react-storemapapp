@@ -22,7 +22,7 @@ constructor(props) {
                         <h5>{groceryItem.text}</h5>
                         <div className="shopping-list-buttons">
                             <button onClick={() => this.props.showLocator(groceryItem.text)} className="find-button">FIND</button>
-                            <button className="close-button">X</button>
+                            <button onClick={() => this.props.removeGroceryItem(groceryItem.text)} className="close-button">X</button>
                         </div>
                         
                     </div>
