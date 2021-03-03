@@ -105,7 +105,7 @@ export default class App extends Component {
       groceryItem.current.value = '';
     }   
 
-    localStorage.setItem('reactShoppingList', this.state.ShoppingList);
+    localStorage.setItem('reactShoppingList', JSON.stringify(this.state.shoppingListItems));
   }
   
   removeGroceryItem = removedItem => {
@@ -120,7 +120,7 @@ export default class App extends Component {
       searchedItem: null
     });
 
-    localStorage.setItem('reactShoppingList', this.state.ShoppingList);
+    localStorage.setItem('reactShoppingList', JSON.stringify(this.state.shoppingListItems));
 
   }
   
@@ -128,8 +128,7 @@ export default class App extends Component {
     if (e.key === 'Enter')  {
       console.log('enter key has been pressed')
     }
-  }
-  
+  }  
 
   render() {
     return (
