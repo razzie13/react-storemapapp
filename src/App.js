@@ -30,28 +30,7 @@ export default class App extends Component {
     this.state = {
        storeName: 'Westmount & Ottawa FreshCo',
        storeHours: '7am-10pm daily',
-       shoppingListItems: [
-         {
-           text: 'bananas',
-           key: 'bananas'
-         },
-         {
-          text: 'apples',
-          key: 'apples'
-        },
-        {
-          text: 'pears',
-          key: 'pears'
-        },
-        {
-          text: 'bread',
-          key: 'bread'
-        },
-        {
-          text: 'ice cream',
-          key: 'ice cream'
-        }
-        ],
+       shoppingListItems: JSON.parse(localStorage.getItem('reactShoppingList')),
        showItemLocator: false,
        searchedItem: null,
        creditVisa: true,
@@ -103,9 +82,11 @@ export default class App extends Component {
       console.log(this.state.shoppingListItems)
 
       groceryItem.current.value = '';
+
+      localStorage.setItem('reactShoppingList', JSON.stringify(this.state.shoppingListItems));
+
     }   
 
-    localStorage.setItem('reactShoppingList', JSON.stringify(this.state.shoppingListItems));
   }
   
   removeGroceryItem = removedItem => {
