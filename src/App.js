@@ -24,6 +24,8 @@ export default class App extends Component {
 
     this.showItemLocator = this.showItemLocator.bind(this);
     this.hideItemLocator = this.hideItemLocator.bind(this);
+
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   
     this.state = {
        storeName: 'Westmount & Ottawa FreshCo',
@@ -74,6 +76,15 @@ export default class App extends Component {
     console.log('function hideItemLocator')
     console.log(removedItem)
   }
+
+  hideItemLocatorAndRemoveItem = removedItem => {
+    this.setState({
+      showItemLocator: false,
+      searchedItem: null
+    });
+    console.log('function hideItemLocator')
+    this.removeGroceryItem(removedItem)
+  }
   
   
   addGroceryItem = groceryItem => {
@@ -90,12 +101,33 @@ export default class App extends Component {
        });
 
       console.log(this.state.shoppingListItems)
+
+      groceryItem.current.value = '';
     }   
+
+    localStorage.setItem('reactShoppingList', this.state.ShoppingList);
   }
   
-  removeGroceryItem = () => {
+  removeGroceryItem = removedItem => {
     console.log('function removeGroceryItem')
+    console.log(removedItem)
+
+    let remainingShoppingListItems = this.state.shoppingListItems.filter(remainingItems => remainingItems.key !== removedItem)
     
+    this.setState({
+      shoppingListItems: [...remainingShoppingListItems],
+      showItemLocator: false,
+      searchedItem: null
+    });
+
+    localStorage.setItem('reactShoppingList', this.state.ShoppingList);
+
+  }
+  
+  handleKeyPress = (e) => {
+    if (e.key === 'Enter')  {
+      console.log('enter key has been pressed')
+    }
   }
   
 
@@ -106,10 +138,10 @@ export default class App extends Component {
           <StoreName locationName={this.state.storeName} />
           <StoreMap />
           <StoreDetails locationHours={this.state.storeHours} visa={this.state.creditVisa} mastercard={this.state.creditMC}/>
-          <ItemLocator display={this.state.showItemLocator} searchedItem={this.state.searchedItem} hideLocator={this.hideItemLocator}/>
+          <ItemLocator display={this.state.showItemLocator} searchedItem={this.state.searchedItem} hideLocator={this.hideItemLocator} removeGroceryItem={this.removeGroceryItem}/>
         </div>
         <div className="right-side">
-          <ShoppingList shoppingListItems={this.state.shoppingListItems} storeName={this.state.storeName} showLocator={this.showItemLocator} addGroceryItem={this.addGroceryItem} removeGroceryItem={this.removeGroceryItem}/>
+          <ShoppingList shoppingListItems={this.state.shoppingListItems} storeName={this.state.storeName} showLocator={this.showItemLocator} addGroceryItem={this.addGroceryItem} removeGroceryItem={this.removeGroceryItem} keyPressHandler={this.handleKeyPress}/>
         </div>
         
         

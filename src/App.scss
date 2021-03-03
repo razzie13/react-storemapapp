@@ -154,6 +154,7 @@ body  {
     position: absolute;
     display: flex;
     flex-direction: column;
+    transform: translate(-50%, -50%);
 
     .close-button  {
         border-style: none;
