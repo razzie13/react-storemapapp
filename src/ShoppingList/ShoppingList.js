@@ -23,7 +23,7 @@ constructor(props) {
                     <div className="shopping-list-item" key={groceryItem.text}>
                         <h5>{groceryItem.text}</h5>
                         <div className="shopping-list-buttons">
-                            <button onClick={() => this.props.showLocator(groceryItem.text.replace(/\s+/g, '-').toLowerCase())} className="find-button">FIND</button>
+                            <button onClick={() => this.props.showLocator(groceryItem.text)} className="find-button">FIND</button>
                             <button onClick={() => this.props.removeGroceryItem(groceryItem.text)} className="close-button">X</button>
                         </div>
                         

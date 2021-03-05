@@ -5,7 +5,7 @@ import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons'
 
 export default function ItemLocator(props) {
 
-    let classes = [props.display ? '' : 'hide', 'item-locator', props.searchedItem]
+    let classes = [props.display ? '' : 'hide', 'item-locator', props.searchedItem === null ? '' : props.searchedItem.replace(/\s+/g, '-').toLowerCase()]
 
 
     return (

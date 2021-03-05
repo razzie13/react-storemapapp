@@ -25,7 +25,7 @@ export default class App extends Component {
     this.showItemLocator = this.showItemLocator.bind(this);
     this.hideItemLocator = this.hideItemLocator.bind(this);
 
-    this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.handleShoppingListEnterPress = this.handleShoppingListEnterPress.bind(this);
   
     this.state = {
        storeName: 'Westmount & Ottawa FreshCo',
@@ -105,10 +105,11 @@ export default class App extends Component {
 
   }
   
-  handleKeyPress = (e) => {
+  handleShoppingListEnterPress = (e, groceryItem) => {
     if (e.key === 'Enter')  {
       console.log('enter key has been pressed')
     }
+
   }  
 
   render() {
@@ -121,7 +122,7 @@ export default class App extends Component {
           <ItemLocator display={this.state.showItemLocator} searchedItem={this.state.searchedItem} hideLocator={this.hideItemLocator} removeGroceryItem={this.removeGroceryItem}/>
         </div>
         <div className="right-side">
-          <ShoppingList shoppingListItems={this.state.shoppingListItems} storeName={this.state.storeName} showLocator={this.showItemLocator} addGroceryItem={this.addGroceryItem} removeGroceryItem={this.removeGroceryItem} keyPressHandler={this.handleKeyPress}/>
+          <ShoppingList shoppingListItems={this.state.shoppingListItems} storeName={this.state.storeName} showLocator={this.showItemLocator} addGroceryItem={this.addGroceryItem} removeGroceryItem={this.removeGroceryItem} keyPressHandler={this.handleShoppingListEnterPress}/>
         </div>
         
         

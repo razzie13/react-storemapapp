@@ -3,7 +3,7 @@ import React from 'react'
 export default function ClickToEnter() {
     Input = () => {
         const handleKeyDown = (event) => {
-          if (event.key === 'Enter') {
+          if (event.keyCode === 13) {
             console.log('do validate')
           }
         }
