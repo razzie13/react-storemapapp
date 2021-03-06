@@ -1,7 +1,10 @@
 import React from 'react'
 
-export default function StoreMap() {
+import ItemLocator from '../ItemLocator/ItemLocator'
+
+export default function StoreMap(props) {
     return (
+        <>
         <div id="storecontainer" className="store-map">
 
             {/* <!-- aisles --- numbered from right to left -- aisle 8 is on left hand side of page --> */}
@@ -34,10 +37,10 @@ export default function StoreMap() {
             <div id="aisle5a" className="aislea aisle5a"></div>
 
             {/* <!-- shelf 5 - right --> */}
-            <div id="aisle5b" className="aisleb aisle5b"></div>
+            <div id="aisle5b" className="aisleb aisle5b international-foods"></div>
 
             {/* <!-- shelf 6 - right --> */}
-            <div id="aisle6a" className="aislea aisle6a"></div>
+            <div id="aisle6a" className="aislea aisle6a international-foods"></div>
 
             {/* <!-- shelf 6 - right --> */}
             <div id="aisle6b" className="aisleb aisle6b"></div>
@@ -63,21 +66,21 @@ export default function StoreMap() {
             <div id="bunker6"   className="bunker bunker6"></div>
 
             {/* <!-- meat bunkers --> */}
-            <div id="meatbunker1" className="meatbunker meatbunker1"></div>
-            <div id="meatbunker2" className="meatbunker meatbunker2"></div>  
+            <div id="meatbunker1" className="meat meatbunker meatbunker1"></div>
+            <div id="meatbunker2" className="meat meatbunker meatbunker2"></div>  
 
             {/* <!-- bakery tables --> */}
-            <div id="bakerytable1"  className="bakerytable bakerytable1"></div>
-            <div id="bakerytable2"  className="bakerytable bakerytable2"></div>
-            <div id="bread"         className="bread"></div>
+            <div id="bakery bakerytable1"  className="bakery bakerytable bakerytable1"></div>
+            <div id="bakery bakerytable2"  className="bakery bakerytable bakerytable2"></div>
+            <div id="bread"                className="bakery bread"></div>
 
-            {/* <!-- produce tables --> */}
-            <div id="producetablelong"      className="producetablelong"></div>
-            <div id="producetableshort1"    className="producetableshort producetableshort1"></div>
-            <div id="producetableshort2"    className="producetableshort producetableshort2"></div>
+                        {/* <!-- produce tables --> */}
+            <div id="producetablelong"      className="produce producetablelong"></div>
+            <div id="producetableshort1"    className="produce producetableshort producetableshort1"></div>
+            <div id="producetableshort2"    className="produce producetableshort producetableshort2"></div>
 
             {/* <!-- produce edges --> */}
-            <div id="citruswall"    className="citruswall"></div>
+            <div id="citruswall"    className="produce citruswall"></div>
 
             {/* <!-- four-blocks --> */}
             <div id="fourblockoneone"       className="fourblock fourblockrowone fourblockcolumnone"></div>
@@ -85,24 +88,30 @@ export default function StoreMap() {
             <div id="fourblockthreeone"     className="fourblock fourblockrowthree fourblockcolumnone"></div>
             <div id="fourblockfourone"      className="fourblock fourblockrowfour fourblockcolumnone"></div>
             <div id="fourblockfiveone"      className="fourblock fourblockrowfive fourblockcolumnone"></div>
-            <div id="fourblockonetwo"       className="fourblock fourblockrowone fourblockcolumntwo"></div>
-            <div id="fourblocktwotwo"       className="fourblock fourblockrowtwo fourblockcolumntwo"></div>
-            <div id="fourblockthreetwo"     className="fourblock fourblockrowthree fourblockcolumntwo"></div>
-            <div id="fourblockfourtwo"      className="fourblock fourblockrowfour fourblockcolumntwo"></div>
-            <div id="fourblockfivetwo"      className="fourblock fourblockrowfive fourblockcolumntwo"></div>
+            <div id="fourblockonetwo"       className="fourblock fourblockrowone fourblockcolumntwo international-foods"></div>
+            <div id="fourblocktwotwo"       className="fourblock fourblockrowtwo fourblockcolumntwo international-foods"></div>
+            <div id="fourblockthreetwo"     className="fourblock fourblockrowthree fourblockcolumntwo international-foods"></div>
+            <div id="fourblockfourtwo"      className="fourblock fourblockrowfour fourblockcolumntwo international-foods"></div>
+            <div id="fourblockfivetwo"      className="fourblock fourblockrowfive fourblockcolumntwo international-foods"></div>
             <div id="fourblockfourthree"    className="fourblock fourblockrowfour fourblockcolumnthree"></div>
-            <div id="fourblockonefour"      className="fourblock fourblockrowone fourblockcolumnfour"></div>
-            <div id="fourblocktwofour"      className="fourblock fourblockrowtwo fourblockcolumnfour"></div>
-            <div id="fourblockthreefour"    className="fourblock fourblockrowthree fourblockcolumnfour"></div>
-            <div id="fourblockfourfour"     className="fourblock fourblockrowfour fourblockcolumnfour"></div>
-            <div id="fourblockfivefour"     className="fourblock fourblockrowfive fourblockcolumnfour"></div>
+            <div id="fourblockonefour"      className="fourblock fourblockrowone fourblockcolumnfour deal-zone"></div>
+            <div id="fourblocktwofour"      className="fourblock fourblockrowtwo fourblockcolumnfour deal-zone"></div>
+            <div id="fourblockthreefour"    className="fourblock fourblockrowthree fourblockcolumnfour deal-zone"></div>
+            <div id="fourblockfourfour"     className="fourblock fourblockrowfour fourblockcolumnfour deal-zone"></div>
+            <div id="fourblockfivefour"     className="fourblock fourblockrowfive fourblockcolumnfour deal-zone"></div>
             <div id="fourblockonefive"      className="fourblock fourblockrowone fourblockcolumnfive"></div>
             <div id="fourblocktwofive"      className="fourblock fourblockrowtwo fourblockcolumnfive"></div>
             <div id="fourblockthreefive"    className="fourblock fourblockrowthree fourblockcolumnfive"></div>
 
+            <div id="store-entrance"        className="store-entrance">entrance</div>
+            <div id="store-checkouts"       className="store-checkouts">checkouts</div>
+            
+            <ItemLocator display={props.display} searchedItem={props.searchedItem} hideLocator={props.hideLocator} removeGroceryItem={props.removeGroceryItem}/>
+        
+        
         </div>
 
-
+        </>
 
     )
 }

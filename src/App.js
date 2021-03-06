@@ -12,7 +12,6 @@ import StoreName from "./StoreName/StoreName";
 import StoreDetails from './StoreDetails/StoreDetails'
 import StoreMap from "./StoreMap/StoreMap";
 import ShoppingList from './ShoppingList/ShoppingList'
-import ItemLocator from './ItemLocator/ItemLocator'
 
 export default class App extends Component {
 
@@ -28,21 +27,29 @@ export default class App extends Component {
     this.handleShoppingListEnterPress = this.handleShoppingListEnterPress.bind(this);
   
     this.state = {
-       storeName: 'Westmount & Ottawa FreshCo',
+       storeName: 'Kitchener West',
        storeHours: '7am-10pm daily',
        shoppingListItems: JSON.parse(localStorage.getItem('reactShoppingList')),
        showItemLocator: false,
+       shoppingListAlertModal: false,
        searchedItem: null,
        creditVisa: true,
-       creditMC: true
+       creditMC: true,
+       showProduce: false,
+       showBakery: false,
+       showMeat: false,
+       showInternationalFoods: false,
+       showDealZone: false
     }
   }
 
   showItemLocator = groceryItem => {
     this.setState({
       showItemLocator: true,
+      shoppingListAlertModal: true,
       searchedItem: groceryItem
     });
+
     console.log('function showItemLocator')
     console.log(groceryItem)
   }
@@ -117,12 +124,12 @@ export default class App extends Component {
       <div className="App">
         <div className="left-side">
           <StoreName locationName={this.state.storeName} />
-          <StoreMap />
+          <StoreMap display={this.state.showItemLocator} searchedItem={this.state.searchedItem} hideLocator={this.hideItemLocator} removeGroceryItem={this.removeGroceryItem}/>
           <StoreDetails locationHours={this.state.storeHours} visa={this.state.creditVisa} mastercard={this.state.creditMC}/>
-          <ItemLocator display={this.state.showItemLocator} searchedItem={this.state.searchedItem} hideLocator={this.hideItemLocator} removeGroceryItem={this.removeGroceryItem}/>
         </div>
         <div className="right-side">
-          <ShoppingList shoppingListItems={this.state.shoppingListItems} storeName={this.state.storeName} showLocator={this.showItemLocator} addGroceryItem={this.addGroceryItem} removeGroceryItem={this.removeGroceryItem} keyPressHandler={this.handleShoppingListEnterPress}/>
+          <ShoppingList shoppingListItems={this.state.shoppingListItems} searchedItem={this.state.searchedItem} showLocator={this.showItemLocator} addGroceryItem={this.addGroceryItem} removeGroceryItem={this.removeGroceryItem} keyPressHandler={this.handleShoppingListEnterPress} showAlertModal={this.state.shoppingListAlertModal}/>
+          
         </div>
         
         

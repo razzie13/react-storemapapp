@@ -15,6 +15,27 @@ body  {
     margin: auto;
 }
 
+.produce  {
+    background-color: green !important;
+}
+
+.bakery  {
+    background-color: wheat !important;
+    color: black !important;
+}
+
+.meat  {
+    background-color: indianred !important;
+}
+
+.deli  {
+    background-color: pink !important;
+}
+
+.international-foods  {
+    background-color: rebeccapurple !important;
+}
+
 // ----- smartphone configuration -----
 
 @media screen and (orientation: portrait) and (min-width: 320px) and (max-width: 480px) and (max-height: 740px)  {
@@ -111,10 +132,44 @@ body  {
 
 .store-name  {
     display: flex;
+    flex-direction: column;
+
+    p  {
+        margin-top: -1rem;
+        margin-left: 2rem;
+
+        span  {
+            margin: 0 0.5rem;
+            padding: 0 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            color: white;
+        }
+    }
 }
 
 .store-details {
     margin-top: -10px;
+}
+
+.store-entrance  {
+    position: absolute;
+    top: 90%;
+    left: 85%;
+    background-color: yellowgreen;
+    padding: 5px 15px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.store-checkouts  {
+    position: absolute;
+    top: 90%;
+    left: 35%;
+    background-color: yellowgreen;
+    padding: 5px 100px;
+    font-weight: bold;
+    border-radius: 5px;
 }
 
 .store-name, .store-details  {
@@ -225,6 +280,21 @@ body  {
         background-color: orange;
         color: black;
     }
+}
+
+.alert-modal  {
+    width: 50vw;
+    height: 45vw;
+    background-color: rgba(0, 0, 0, 0.808);
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    font-weight: bold;
+    margin: auto;
+    margin-top: -55vh;
+    transform: translateY(-50%);
 }
 
 .item-locator  {

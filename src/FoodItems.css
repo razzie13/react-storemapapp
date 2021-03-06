@@ -377,6 +377,31 @@
 /* ----- aisle 8a ----- */
 
 
+/* ----- bakery ----- */
+.bread,
+.white-bread,
+.whole-wheat-bread,
+.raisin-bread,
+.rye-bread,
+.multigrain-bread,
+.bagels,
+.english-muffins,
+.hamburger-buns,
+.hot-dog-buns,
+.texas-toast,
+.garlic-bread,
+.tortillas,
+.croissants {
+    color: black;
+    top: 40%;
+    margin-left: 85%;
+}
+
+.corn-tortillas {
+    color: black;
+    top: 20%;
+    margin-left: 95%;
+}
 
 
 /* ----- values imported from shopping list project css ----- */

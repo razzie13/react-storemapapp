@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 
+import ShoppingListAlertModal from './ShoppingListAlertModal'
+
 export default class ShoppingList extends Component {
 
 constructor(props) {
@@ -13,6 +15,7 @@ constructor(props) {
 
     render() {
         return (
+            <>
             <div className="shopping-list">
                 <h2>Shopping List <FontAwesomeIcon icon={faCheck} /></h2>
                 
@@ -29,7 +32,11 @@ constructor(props) {
                         
                     </div>
                 )}
+
+                
             </div>
+            <ShoppingListAlertModal display={this.props.showAlertModal} searchedItem={this.props.searchedItem}/>
+            </>
         )
     }
 }
