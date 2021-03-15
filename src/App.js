@@ -34,12 +34,7 @@ export default class App extends Component {
        shoppingListAlertModal: false,
        searchedItem: null,
        creditVisa: true,
-       creditMC: true,
-       showProduce: false,
-       showBakery: false,
-       showMeat: false,
-       showInternationalFoods: false,
-       showDealZone: false
+       creditMC: true
     }
   }
 
@@ -50,31 +45,24 @@ export default class App extends Component {
       searchedItem: groceryItem
     });
 
-    console.log('function showItemLocator')
-    console.log(groceryItem)
+    setTimeout(() => {
+      this.setState({shoppingListAlertModal: false});
+    }, 4000)
+
+    console.log('function showItemLocator ' + groceryItem)
   }
 
-  hideItemLocator = removedItem => {
+  hideItemLocator = () => {
     this.setState({
       showItemLocator: false,
+      shoppingListAlertModal: false,
       searchedItem: null
     });
     console.log('function hideItemLocator')
-    console.log(removedItem)
-  }
-
-  hideItemLocatorAndRemoveItem = removedItem => {
-    this.setState({
-      showItemLocator: false,
-      searchedItem: null
-    });
-    console.log('function hideItemLocator')
-    this.removeGroceryItem(removedItem)
-  }
-  
+  } 
   
   addGroceryItem = groceryItem => {
-    console.log('function addGroceryItem')
+    console.log('function addGroceryItem ' + groceryItem)
     
     if (groceryItem.current.value !== '')  {
        let newGroceryItem = {
@@ -97,14 +85,14 @@ export default class App extends Component {
   }
   
   removeGroceryItem = removedItem => {
-    console.log('function removeGroceryItem')
-    console.log(removedItem)
+    console.log('function removeGroceryItem ' + removedItem)
 
     let remainingShoppingListItems = this.state.shoppingListItems.filter(remainingItems => remainingItems.key !== removedItem)
     
     this.setState({
       shoppingListItems: [...remainingShoppingListItems],
       showItemLocator: false,
+      shoppingListAlertModal: false,
       searchedItem: null
     });
 
@@ -112,9 +100,10 @@ export default class App extends Component {
 
   }
   
-  handleShoppingListEnterPress = (e, groceryItem) => {
+  handleShoppingListEnterPress = e => {
     if (e.key === 'Enter')  {
       console.log('enter key has been pressed')
+      this.addGroceryItem()
     }
 
   }  

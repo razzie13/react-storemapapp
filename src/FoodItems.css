@@ -104,7 +104,11 @@
 }
 
 .hot-cereal,
-.oatmeal  {
+.oatmeal,
+.pancake-mix,
+.maple-syrup,
+.table-syrup,
+.syrup  {
     top: 30%;
     margin-left: 55%;
 }
@@ -237,8 +241,6 @@
 }
 
 .soup,
-
-
 .beef-broth,
 .broth,
 .campbells,
@@ -257,6 +259,26 @@
 
 
 /* ----- aisle 5b ----- */
+
+.spaghetti-noodles,
+.spaghetti,
+.fetuccini,
+.spaghettini,
+.rotini,
+.elbow-macaroni  {
+    top: 40%;
+    margin-left: 40%;
+}
+
+.spaghetti-sauce,
+.tomato-sauce,
+.pizza-sauce,
+.ragu,
+.classico,
+.passata  {
+    top: 60%;
+    margin-left: 40%
+}
 
 
 /* ----- aisle 5a ----- */
@@ -376,6 +398,47 @@
 
 /* ----- aisle 8a ----- */
 
+.pizza-pockets,
+.pizza-pops  {
+    top: 25%;
+    margin-left: 2%;
+}
+
+.pizza,
+.frozen-pizza,
+.ezekiel-bread  {
+    top: 40%;
+    margin-left: 2%;
+}
+
+.french-fries,
+.fries,
+.tasty-taters,
+.tater-tots,
+.frozen-vegetables,
+.frozen-peas,
+.frozen-corn,
+.frozen-mixed-vegetables,
+.frozen-butternut-squash,
+.frozen-cauliflower,
+.frozen-broccoli  {
+    top: 60%;
+    margin-left: 2%;
+}
+
+.waffles,
+.frozen-waffles,
+.frozen-pancakes,
+.frozen-juices,
+.frozen-juice,
+.frozen-lemonade,
+.frozen-orange-juice,
+.hash-browns,
+.frozen-hash-browns,
+.potato-pancakes  {
+    top: 80%;
+    margin-left: 2%;
+}
 
 /* ----- bakery ----- */
 .bread,
