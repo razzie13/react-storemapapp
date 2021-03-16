@@ -40,6 +40,39 @@
     margin-left: 67%;
 }
 
+/* ----- dairy ----- margin-left: 55%; ----- */
+
+
+.eggs,
+.white-eggs,
+.large-white-eggs,
+.brown-eggs,
+.large-brown-eggs,
+.organic-eggs,
+.omega3-eggs,
+.medium-eggs,
+.six-pack-eggs,
+.small-eggs,
+.extra-large-white-eggs,
+.extra-large-brown-eggs,
+.dozen-eggs,
+
+.whip-cream,
+.whipping-cream,
+.table-cream,
+.half-and-half,
+.half-and-half-cream,
+.aerosol-whip-cream,
+.whip-cream-cans,
+
+.almond-milk,
+.cashew-milk,
+.chocolate-almond-milk,
+.soy-milk  {
+    top: 5%;
+    margin-left: 55%;
+}
+
 /* ----- aisle 1a ----- margin-left: 64%; ----- */
 .cottage-cheese,
 .sour-cream  {
@@ -585,8 +618,8 @@
             {
             color: rgb(12, 87, 12);
             /* text color listed as "black !important" when displayed on store map */
-            top: 60%;
-            margin-left: 95%;
+            top: 55%;
+            margin-left: 80%;
         }
         .bhindi,
         .chili-peppers,
