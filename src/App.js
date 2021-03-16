@@ -24,8 +24,6 @@ export default class App extends Component {
 
     this.showItemLocator = this.showItemLocator.bind(this);
     this.hideItemLocator = this.hideItemLocator.bind(this);
-
-    this.handleShoppingListEnterPress = this.handleShoppingListEnterPress.bind(this);
   
     this.state = {
        storeName: 'Kitchener West',
@@ -70,7 +68,8 @@ export default class App extends Component {
     console.log('function hideItemLocator')
   } 
   
-  addGroceryItem = groceryItem => {
+  addGroceryItem = (groceryItem) => {
+
     console.log('function addGroceryItem ' + groceryItem.current.value)
 
     console.log(this.state.shoppingListItems)
@@ -112,15 +111,6 @@ export default class App extends Component {
     localStorage.setItem('reactShoppingList', JSON.stringify(this.state.shoppingListItems));
 
   }
-  
-  handleShoppingListEnterPress = (e) => {
-    if (e.key === 'Enter')  {
-      console.log('enter key has been pressed')
- 
-        
-    }
-
-  }  
 
   render() {
 

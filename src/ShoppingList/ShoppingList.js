@@ -19,7 +19,7 @@ constructor(props) {
             <div className="shopping-list">
                 <h2>Shopping List <FontAwesomeIcon icon={faCheck} /></h2>
                 
-                <input ref={this.textInput} onKeyPress={this.props.keyPressHandler} placeholder="Type List Item Here" />
+                <input ref={this.textInput} onKeyPress={e => (e.key === 'Enter' ? this.props.addGroceryItem(this.textInput) : null)} placeholder="Type List Item Here" />
                 <button type="submit" onClick={() => this.props.addGroceryItem(this.textInput)} ref={node => (this.btn = node)}>Add to List</button>
             
                 {this.props.shoppingListItems.map((groceryItem) => 
