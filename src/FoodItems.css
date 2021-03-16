@@ -123,6 +123,7 @@
 .chex,
 .cinnamon-toast-crunch,
 .cocoa-puffs,
+.corn-flakes,
 .frosted-flakes,
 .froot-loops,
 .fruit-loops,
@@ -170,13 +171,16 @@
 /* ----- aisle 3b ----- */
 .arrowroot,
 .cereal-bars,
+.chocolate-chip-cookies,
+.chocolate-chunk-cookies,
 .cookies,
 .chips-ahoy,
 .chunks-ahoy,
 .maple-leaf-cookies,
 .maple-creme-cookies,
 .maple-cream-cookies,
-.oreos
+.oreos,
+.rainbow-cookies
   {
     top: 60%;
     margin-left: 48%;
@@ -226,7 +230,10 @@
 
 
 /* ----- aisle 4a ----- */
-.rice  {
+.minute-rice,
+.rice,
+.uncle-bens-rice,
+.uncle-bens  {
     top: 30%;
     margin-left: 37%
 }
@@ -271,6 +278,7 @@
 }
 
 .spaghetti-sauce,
+.pasta-sauce,
 .tomato-sauce,
 .pizza-sauce,
 .ragu,
@@ -302,6 +310,8 @@
 .evian,
 .mio,
 .zaz,
+.sparkling-water,
+.carbonated-water,
 .water  {
     top: 40%;
     margin-left: 12%;
@@ -317,8 +327,10 @@
 .doctor-pepper,
 .orange-crush,
 .pepsi,
+.pepsi-zero,
 .root-beer,
-.sprite  {
+.sprite,
+.tonic-water  {
     top: 60%;
     margin-left: 12%;
 }
@@ -390,6 +402,8 @@
     margin-left: 4%;
 }
 
+.sponge-towels,
+.spongetowels,
 .paper-towel,
 .paper-towels  {
     top: 25%;
@@ -398,6 +412,8 @@
 
 /* ----- aisle 8a ----- */
 
+.bistro-crustinis,
+.crustinis,
 .pizza-pockets,
 .pizza-pops  {
     top: 25%;
@@ -406,6 +422,8 @@
 
 .pizza,
 .frozen-pizza,
+.delissio,
+.ristorante,
 .ezekiel-bread  {
     top: 40%;
     margin-left: 2%;

@@ -15,6 +15,7 @@ import ShoppingList from './ShoppingList/ShoppingList'
 
 export default class App extends Component {
 
+
   constructor(props) {
     super(props)
 
@@ -29,7 +30,8 @@ export default class App extends Component {
     this.state = {
        storeName: 'Kitchener West',
        storeHours: '7am-10pm daily',
-       shoppingListItems: JSON.parse(localStorage.getItem('reactShoppingList')),
+       shoppingListItems: [],
+       //shoppingListItems: JSON.parse(localStorage.getItem('reactShoppingList')),
        showItemLocator: false,
        shoppingListAlertModal: false,
        searchedItem: null,
@@ -37,6 +39,13 @@ export default class App extends Component {
        creditMC: true
     }
   }
+
+  componentDidMount()  {
+    this.setState({
+      shoppingListItems: JSON.parse(localStorage.getItem('reactShoppingList'))
+    })
+  }
+
 
   showItemLocator = groceryItem => {
     this.setState({
@@ -62,25 +71,29 @@ export default class App extends Component {
   } 
   
   addGroceryItem = groceryItem => {
-    console.log('function addGroceryItem ' + groceryItem)
+    console.log('function addGroceryItem ' + groceryItem.current.value)
+
+    console.log(this.state.shoppingListItems)
+
+    let newGroceryItem;
     
     if (groceryItem.current.value !== '')  {
-       let newGroceryItem = {
-         text: groceryItem.current.value,
-         key: groceryItem.current.value  
-       };
-
-       this.setState({
-         shoppingListItems: [...this.state.shoppingListItems, newGroceryItem]
-       });
-
-      console.log(this.state.shoppingListItems)
-
-      groceryItem.current.value = '';
-
-      localStorage.setItem('reactShoppingList', JSON.stringify(this.state.shoppingListItems));
-
+       newGroceryItem = {text: groceryItem.current.value, key: groceryItem.current.value};
     }   
+
+    this.setState({
+      shoppingListItems: [...this.state.shoppingListItems, newGroceryItem]
+    });
+
+
+    localStorage.setItem('reactShoppingList', JSON.stringify(this.state.shoppingListItems, newGroceryItem));
+    
+
+    console.log(JSON.parse(localStorage.reactShoppingList))
+
+    console.log(this.state.shoppingListItems)
+
+    groceryItem.current.value = '';
 
   }
   
@@ -100,15 +113,18 @@ export default class App extends Component {
 
   }
   
-  handleShoppingListEnterPress = e => {
+  handleShoppingListEnterPress = (e) => {
     if (e.key === 'Enter')  {
       console.log('enter key has been pressed')
-      this.addGroceryItem()
+ 
+        
     }
 
   }  
 
   render() {
+
+
     return (
       <div className="App">
         <div className="left-side">
