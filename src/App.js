@@ -29,7 +29,6 @@ export default class App extends Component {
        storeName: 'Kitchener West',
        storeHours: '7am-10pm daily',
        shoppingListItems: [],
-       //shoppingListItems: JSON.parse(localStorage.getItem('reactShoppingList')),
        showItemLocator: false,
        shoppingListAlertModal: false,
        searchedItem: null,
@@ -42,6 +41,8 @@ export default class App extends Component {
     this.setState({
       shoppingListItems: JSON.parse(localStorage.getItem('reactShoppingList'))
     })
+    console.log('componentDidMount')
+    console.log(this.state.shoppingListItems)
   }
 
 
