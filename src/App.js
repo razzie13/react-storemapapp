@@ -24,6 +24,9 @@ export default class App extends Component {
 
     this.showItemLocator = this.showItemLocator.bind(this);
     this.hideItemLocator = this.hideItemLocator.bind(this);
+
+    this.handleOnDragEnd = this.handleOnDragEnd.bind(this);
+
   
     this.state = {
        storeName: 'Kitchener West',
@@ -113,6 +116,25 @@ export default class App extends Component {
 
   }
 
+  handleOnDragEnd = result => {
+    console.log('function handleOnDragEnd')
+
+    const items = Array.from(this.state.shoppingListItems);
+
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+
+     this.setState({
+      shoppingListItems: items
+     })
+
+    console.log(this.state.shoppingListItems)
+
+    localStorage.setItem('reactShoppingList', JSON.stringify(items));
+
+   }
+  
+
   render() {
 
 
@@ -124,7 +146,7 @@ export default class App extends Component {
           <StoreDetails locationHours={this.state.storeHours} visa={this.state.creditVisa} mastercard={this.state.creditMC}/>
         </div>
         <div className="right-side">
-          <ShoppingList shoppingListItems={this.state.shoppingListItems} searchedItem={this.state.searchedItem} showLocator={this.showItemLocator} addGroceryItem={this.addGroceryItem} removeGroceryItem={this.removeGroceryItem} keyPressHandler={this.handleShoppingListEnterPress} showAlertModal={this.state.shoppingListAlertModal}/>
+          <ShoppingList shoppingListItems={this.state.shoppingListItems} searchedItem={this.state.searchedItem} showLocator={this.showItemLocator} addGroceryItem={this.addGroceryItem} removeGroceryItem={this.removeGroceryItem} keyPressHandler={this.handleShoppingListEnterPress} showAlertModal={this.state.shoppingListAlertModal} handleOnDragEnd={this.handleOnDragEnd}/>
           
         </div>
         
