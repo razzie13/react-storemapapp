@@ -15,7 +15,6 @@ import ShoppingList from './ShoppingList/ShoppingList'
 
 export default class App extends Component {
 
-
   constructor(props) {
     super(props)
 
@@ -27,7 +26,6 @@ export default class App extends Component {
 
     this.handleOnDragEnd = this.handleOnDragEnd.bind(this);
 
-  
     this.state = {
        storeName: 'Kitchener West',
        storeHours: '7am-10pm daily',
@@ -41,26 +39,21 @@ export default class App extends Component {
   }
 
   componentDidMount()  {
-    this.setState({
-      shoppingListItems: JSON.parse(localStorage.getItem('reactShoppingList'))
-    })
+    localStorage.getItem('reactShoppingList') === null ? 
+      this.setState({ shoppingListItems: []}, () => console.log(this.state.shoppingListItems)) : this.setState({ shoppingListItems: JSON.parse(localStorage.getItem('reactShoppingList')) }, () => console.log(this.state.shoppingListItems))
     console.log('componentDidMount')
-    console.log(this.state.shoppingListItems)
   }
-
 
   showItemLocator = groceryItem => {
     this.setState({
       showItemLocator: true,
       shoppingListAlertModal: true,
       searchedItem: groceryItem
-    });
+    }, () => console.log('function showItemLocator ' + groceryItem));
 
     setTimeout(() => {
       this.setState({shoppingListAlertModal: false});
     }, 4000)
-
-    console.log('function showItemLocator ' + groceryItem)
   }
 
   hideItemLocator = () => {
@@ -68,75 +61,44 @@ export default class App extends Component {
       showItemLocator: false,
       shoppingListAlertModal: false,
       searchedItem: null
-    });
-    console.log('function hideItemLocator')
+    }, () => console.log('function hideItemLocator'))
   } 
   
   addGroceryItem = (groceryItem) => {
-
     console.log('function addGroceryItem ' + groceryItem.current.value)
 
-    console.log(this.state.shoppingListItems)
-
     let newGroceryItem;
-    
-    if (groceryItem.current.value !== '')  {
-       newGroceryItem = {text: groceryItem.current.value, key: groceryItem.current.value};
-    }   
+    if (groceryItem.current.value !== '')  { newGroceryItem = {text: groceryItem.current.value, key: groceryItem.current.value} }   
 
-    this.setState({
-      shoppingListItems: [...this.state.shoppingListItems, newGroceryItem]
-    });
-
-
-    localStorage.setItem('reactShoppingList', JSON.stringify(this.state.shoppingListItems, newGroceryItem));
-    
-
-    console.log(JSON.parse(localStorage.reactShoppingList))
-
-    console.log(this.state.shoppingListItems)
-
+    this.setState({ shoppingListItems: [...this.state.shoppingListItems, newGroceryItem] }, () => localStorage.setItem('reactShoppingList', JSON.stringify(this.state.shoppingListItems)));
     groceryItem.current.value = '';
-
   }
   
   removeGroceryItem = removedItem => {
     console.log('function removeGroceryItem ' + removedItem)
 
     let remainingShoppingListItems = this.state.shoppingListItems.filter(remainingItems => remainingItems.key !== removedItem)
-    
+
     this.setState({
       shoppingListItems: [...remainingShoppingListItems],
       showItemLocator: false,
       shoppingListAlertModal: false,
       searchedItem: null
-    });
-
-    localStorage.setItem('reactShoppingList', JSON.stringify(this.state.shoppingListItems));
-
+    }, () => localStorage.setItem('reactShoppingList', JSON.stringify(this.state.shoppingListItems)))
   }
 
   handleOnDragEnd = result => {
     console.log('function handleOnDragEnd')
 
     const items = Array.from(this.state.shoppingListItems);
-
     const [reorderedItem] = items.splice(result.source.index, 1);
     items.splice(result.destination.index, 0, reorderedItem);
 
-     this.setState({
-      shoppingListItems: items
-     })
-
-    console.log(this.state.shoppingListItems)
-
-    localStorage.setItem('reactShoppingList', JSON.stringify(items));
-
-   }
+    this.setState({ shoppingListItems: items }, () => localStorage.setItem('reactShoppingList', JSON.stringify(items)))
+  }
   
 
   render() {
-
 
     return (
       <div className="App">
@@ -147,12 +109,9 @@ export default class App extends Component {
         </div>
         <div className="right-side">
           <ShoppingList shoppingListItems={this.state.shoppingListItems} searchedItem={this.state.searchedItem} showLocator={this.showItemLocator} addGroceryItem={this.addGroceryItem} removeGroceryItem={this.removeGroceryItem} keyPressHandler={this.handleShoppingListEnterPress} showAlertModal={this.state.shoppingListAlertModal} handleOnDragEnd={this.handleOnDragEnd}/>
-          
         </div>
-        
-        
       </div>
     )
+
   }
 }
-
