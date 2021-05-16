@@ -388,6 +388,16 @@
     margin-left: 9%;
 }
 
+.baby-formula,
+.baby-shampoo,
+.baby-wipes,
+.diapers,
+.huggies,
+.pampers  {
+    top: 55%;
+    margin-left: 9%;
+}
+
 /* ----- aisle 7a ----- */
 .conditioner,
 .dippity-doo,
@@ -525,8 +535,6 @@
         .apples,
         .apricots,
         .asparagus,
-        .avocado,
-        .avocados,
         .bagged-apples,
         .banana,
         .bananas,
@@ -571,8 +579,6 @@
         .parsley,
         .passionfruit,
         .peaches,
-        .pear,
-        .pears,
         .peppers,
         .pineapple,
         .pineapples,
@@ -590,6 +596,17 @@
         .rutabagas,
         .savoy-cabbage,
         .sliced-mushrooms,
+        .watermelon,
+        .yam,
+        .yams,
+        .yellow-mangoes,
+        .zucchini  {
+            color: rgb(12, 87, 12);
+            /* text color listed as "black !important" when displayed on store map */
+            top: 75%;
+            margin-left: 85%;
+        }
+
         .squash,
         .butternut,
         .butternut-squash,
@@ -598,17 +615,47 @@
         .spaghetti-squash,
         .sweet-potato,
         .sweet-potatoes,
-        .watermelon,
-        .yam,
-        .yams,
-        .yellow-mangoes,
         .yucca,
-        .zucchini  {
+        .yellow-yam  {
             color: rgb(12, 87, 12);
             /* text color listed as "black !important" when displayed on store map */
             top: 75%;
-            margin-left: 85%;
+            margin-left: 81%;
         }
+
+        .pear,
+        .pears,
+        .anjou-pears,
+        .asian-pears,
+        .bartlett-pears,
+        .bosc-pears,
+        .red-pears,
+        .rocha-pears,
+        .starkrimson-pears  {
+            color: rgb(12, 87, 12);
+            /* text color listed as "black !important" when displayed on store map */
+            top: 55%;
+            margin-left: 94%;
+        }
+
+        .tomato,
+        .tomatoes,
+        .hothouse-tomatoes,
+        .hot-house-tomatoes,
+        .cucumber,
+        .cucumbers,
+        .english-cucumbers,
+        .avocado,
+        .avocados,
+        .bagged-avocados,
+        .grape-tomatoes,
+        .cherry-tomatoes  {
+            color: rgb(12, 87, 12);
+            /* text color listed as "black !important" when displayed on store map */
+            top: 68%;
+            margin-left: 94%;
+        }
+
         .blackberries,
         .blueberries,
         .fresh-berries,

@@ -68,10 +68,12 @@ export default class App extends Component {
     console.log('function addGroceryItem ' + groceryItem.current.value)
 
     let newGroceryItem;
-    if (groceryItem.current.value !== '')  { newGroceryItem = {text: groceryItem.current.value, key: groceryItem.current.value} }   
-
-    this.setState({ shoppingListItems: [...this.state.shoppingListItems, newGroceryItem] }, () => localStorage.setItem('reactShoppingList', JSON.stringify(this.state.shoppingListItems)));
-    groceryItem.current.value = '';
+    if (groceryItem.current.value === '')  {alert("Please Enter the Name of a Grocery Item")} 
+    if (groceryItem.current.value !== '')  { 
+      newGroceryItem = {text: groceryItem.current.value, key: groceryItem.current.value}    
+      this.setState({ shoppingListItems: [...this.state.shoppingListItems, newGroceryItem] }, () => localStorage.setItem('reactShoppingList', JSON.stringify(this.state.shoppingListItems)));
+      groceryItem.current.value = '';
+    }
   }
   
   removeGroceryItem = removedItem => {
